@@ -1,3 +1,6 @@
+#November 2016 Deborah Leem for CFG project
+#Flask DB
+
 from flask import Flask
 from flask import render_template
 from flask import request
