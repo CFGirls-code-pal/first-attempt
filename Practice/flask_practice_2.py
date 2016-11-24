@@ -4,25 +4,34 @@
 from flask import Flask
 from flask import render_template
 from flask import request
-import os
+from flask import g
 import sqlite3
 
 app = Flask("MyApp")
 
+#to do: get the right path
+DATABASE = '/path/to/database.db'
+
 def connect_db():
-    """Connects to the specific database."""
-    rv = sqlite3.connect("CFG_DB")
-    rv.row_factory = sqlite3.Row
-    return rv
+    return sqlite3.connect("CFG_DB")
 
-@app.route("/")
-def hello():
-    sqlite_db = connect_db()
-    users = sqlite_db.execute('select name, email, language from users order by name').fetchall()
+@app.before_request
+def before_request():
+    g.db = connect_db()
+
+@app.teardown_request
+def teardown_request(exception):
+    if hasattr(g, 'db'):
+        g.db.close()
+
+#@app.route("/")
+#def hello():
+#    sqlite_db = connect_db()
+#    users = sqlite_db.execute('select name, email, language from users order by name').fetchall()
     #the following line to be reviewed 
-    sqlite_db.close()
+#    sqlite_db.close()
 
-    return render_template("hello.html", users=users)
+#    return render_template("hello.html", users=users)
 
 # @app.route("/<name>")
 # def hello_again(name):
