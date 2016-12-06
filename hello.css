@@ -1,0 +1,58 @@
+.header {
+	background-size: 100%;
+	text-align: center;
+	color: white;
+}
+
+.jumbotron {
+	min-height: 500px;
+  background-image:url("https://tctechcrunch2011.files.wordpress.com/2015/04/codecode.jpg?w=738");
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+
+#menu {
+	position: fixed;
+	width: 100%;
+	left: 0;
+	right: 0;
+	top: 0;
+	margin: auto;
+	z-index: 1000;
+}
+
+ul {
+	padding-top: 10px;
+	padding-bottom: 10px;
+  padding-left:450px;
+	background: white;
+}
+li {
+	display: inline;
+	padding: 0px 10px 0px 10px;
+	color: black;
+	text-align: center;
+  margin: auto;
+}
+
+body{
+    background: gray;
+
+  }
+
+.picture {
+  margin: 20px 20px 20px 30px;
+  float: center;
+  margin-left:300px ;
+
+
+}
+
+.text {
+  	text-align: center;
+    color: white;
+    border-radius: 10px;
+    font-family: Vivaldi, Cursive;
+
+}
