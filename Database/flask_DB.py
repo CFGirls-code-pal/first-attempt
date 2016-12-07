@@ -5,6 +5,7 @@ from flask import Flask
 from flask import render_template
 from flask import request
 from flask import g
+from flask import send_from_directory
 import sqlite3
  
 app = Flask("MyApp")
@@ -41,5 +42,9 @@ def sign_up():
             (form_data['name'], form_data['email'], form_data['language'])
         )
     return "All OK"
+
+app.route('/static/<path:path>')
+def send_file(path):
+    return send_from_directory('static', path)
  
 app.run()
