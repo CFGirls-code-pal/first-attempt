@@ -25,15 +25,16 @@
 ul {
 	padding-top: 10px;
 	padding-bottom: 10px;
-  padding-left:450px;
-	background: white;
+	padding-left: 0;
+    /*background: white;*/
 }
 li {
-	display: inline;
-	padding: 0px 10px 0px 10px;
-	color: black;
-	text-align: center;
-  margin: auto;
+	list-style: none;
+	/*display: inline;*/
+	/*padding: 0px 10px 0px 10px;*/
+	/*color: black;*/
+	/*text-align: center;
+  margin: auto;*/
 }
 
 body{
@@ -43,8 +44,7 @@ body{
 
 .picture {
   margin: 20px 20px 20px 30px;
-  float: center;
-  margin-left:300px ;
+  text-align: center;
 
 
 }
